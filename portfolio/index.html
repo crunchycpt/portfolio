@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game Developer Portfolio">
+    <title>Daniel Wohlfahrt — Game Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
+
+    <!-- Splitting.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">&lt; GAME_DEV /&gt;</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">Über mich</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#games" class="nav-link">Projekte</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-mobile" id="mobileMenu">
+            <a href="#about">Über mich</a>
+            <a href="#skills">Skills</a>
+            <a href="#games">Projekte</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section id="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-scanlines"></div>
+        <div class="hero-grid-overlay"></div>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">&lt; GAME DEVELOPER /&gt;</p>
+            <h1 class="hero-title" data-splitting>Daniel Wohlfahrt</h1>
+            <p class="hero-subtitle">
+                <span class="engine-tag unity">Unity</span>
+                <span class="hero-dot">·</span>
+                <span class="engine-tag blender">Blender</span>
+                <span class="hero-dot">·</span>
+                <span class="engine-tag unreal">Unreal Engine</span>
+            </p>
+            <div class="hero-cta">
+                <a href="#games" class="btn btn-primary">
+                    <span class="btn-glow"></span>
+                    Projekte
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    Kontakt
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>SCROLL</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════ -->
+    <section id="about">
+        <div class="section-number" aria-hidden="true">01</div>
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="section-heading-line"></span>
+                Über mich
+            </h2>
+            <div class="about-grid">
+                <div class="about-image-wrap" id="aboutImage">
+                    <div class="about-image-frame">
+                        <img
+                            src="assets/images/avatar.jpg"
+                            alt="[Dein Name] — Game Developer"
+                            class="about-image"
+                            onerror="this.style.display='none'"
+                        >
+                        <div class="about-image-fallback">
+                            <span>&lt;DEV/&gt;</span>
+                        </div>
+                        <div class="about-image-border"></div>
+                    </div>
+                </div>
+
+                <div class="about-text" id="aboutText">
+                    <p class="about-lead">
+                        Ich entwickle regelbasierte Systeme und Echtzeit-Interaktion in Unity — mit solider Grundlage in Informatik und technischem Systemdenken.
+                    </p>
+                    <p class="about-body">
+                        Als Informatikstudent konzentriere ich mich auf Softwarearchitektur und die Entwicklung komplexer interaktiver Systeme mit Unity und C#. Mein Schwerpunkt liegt auf sauberem, wartbarem Code, der in Echtzeit-3D-Umgebungen zuverlässig funktioniert.
+                    </p>
+                    <p class="about-body">
+                        Ich denke in Systemen — von der Datenstruktur über die Spiellogik bis zur Nutzerinteraktion. Game Development ist für mich die Schnittmenge aus Software Engineering und angewandter Interaktionsgestaltung. So gelange ich vom geplanten Erlebnis zur Umsetzung als interaktive Umgebung, in der sich Nutzer*innen gerne aufhalten.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-value">
+                                <span class="stat-number" data-target="5">0</span>
+                                <span class="stat-plus">+</span>
+                            </div>
+                            <span class="stat-label">Projekte</span>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">
+                                <span class="stat-number" data-target="3">0</span>
+                                <span class="stat-plus">+</span>
+                            </div>
+                            <span class="stat-label">Jahre</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="3">0</span>
+                            <span class="stat-label">Engines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════════════ -->
+    <section id="skills">
+        <div class="section-number" aria-hidden="true">02</div>
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="section-heading-line"></span>
+                Skills &amp; Tools
+            </h2>
+            <div class="skills-grid" id="skillsGrid">
+                <div class="skills-group">
+                    <h3 class="skills-group-title">Engines</h3>
+                    <div class="badge-wrap">
+                        <span class="badge badge-engine badge-unity">
+                            <svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M3.877 11.5L12 5.121 20.123 11.5 12 17.879 3.877 11.5zM12 2L1 10.5l11 8.5 11-8.5L12 2z"/>
+                            </svg>
+                            Unity
+                        </span>
+                        <span class="badge badge-engine badge-unreal">
+                            <svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 1.846c5.606 0 10.154 4.548 10.154 10.154S17.606 22.154 12 22.154 1.846 17.606 1.846 12 6.394 1.846 12 1.846zm0 2.77c-4.069 0-7.385 3.316-7.385 7.384S7.931 19.385 12 19.385s7.385-3.316 7.385-7.385S16.069 4.616 12 4.616zm.923 2.77l4.154 2.4v4.8l-4.154 2.4-4.153-2.4v-4.8l4.153-2.4z"/>
+                            </svg>
+                            Unreal Engine
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3 class="skills-group-title">Programmierung</h3>
+                    <div class="badge-wrap">
+                        <span class="badge">C#</span>
+                        <span class="badge">C++</span>
+                        <span class="badge">Blueprints</span>
+                        <span class="badge">HLSL / Shader</span>
+                        <span class="badge">HTML · CSS · JS</span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3 class="skills-group-title">Tools</h3>
+                    <div class="badge-wrap">
+                        <span class="badge">Blender</span>
+                        <span class="badge">Photoshop</span>
+                        <span class="badge">Git / GitHub</span>
+                        <span class="badge">VS Code</span>
+                        <span class="badge">Rider</span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3 class="skills-group-title">Disziplinen</h3>
+                    <div class="badge-wrap">
+                        <span class="badge">Gameplay Programming</span>
+                        <span class="badge">Systems Design</span>
+                        <span class="badge">Simulation</span>
+                        <span class="badge">Software-Architektur</span>
+                        <span class="badge">Level Design</span>
+                        <span class="badge">Game UI / UX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         GAMES
+    ═══════════════════════════════════════════ -->
+    <section id="games">
+        <div class="section-number" aria-hidden="true">03</div>
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="section-heading-line"></span>
+                Projekte
+            </h2>
+
+            <div class="filter-tabs" id="filterTabs" role="tablist" aria-label="Projekte filtern">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Alle</button>
+                <button class="filter-btn" data-filter="grundlagen" role="tab" aria-selected="false">Grundlagen</button>
+                <button class="filter-btn" data-filter="hochschule" role="tab" aria-selected="false">Hochschulprojekte</button>
+                <button class="filter-btn filter-btn-featured" data-filter="prototyp" role="tab" aria-selected="false">Prototyp ★</button>
+                <button class="filter-btn" data-filter="blender" role="tab" aria-selected="false">Blender / 3D</button>
+            </div>
+
+            <div class="game-showcase" id="gameShowcase" style="display:none">
+                <!-- Dynamisch befüllt von main.js -->
+            </div>
+
+            <div class="games-grid" id="gamesGrid">
+                <!-- Dynamisch befüllt von main.js -->
+            </div>
+
+            <p class="games-empty" id="gamesEmpty" style="display:none;">
+                Keine Spiele in dieser Kategorie gefunden.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════ -->
+    <section id="contact">
+        <div class="section-number" aria-hidden="true">04</div>
+        <div class="container contact-container">
+            <h2 class="section-heading">
+                <span class="section-heading-line"></span>
+                Kontakt
+            </h2>
+            <p class="contact-lead">
+                Bereit für neue Projekte und Herausforderungen.<br>
+                Melde dich gerne — ich freue mich auf deine Nachricht.
+            </p>
+
+            <button
+                class="contact-email"
+                id="copyEmail"
+                data-email="deine@email.de"
+                aria-label="E-Mail-Adresse kopieren"
+            >
+                <span class="email-prefix">&gt; </span>
+                <span class="email-text">deine@email.de</span>
+                <span class="copy-hint">[ klick zum kopieren ]</span>
+                <span class="copy-feedback" id="copyFeedback" aria-live="polite">✓ Kopiert!</span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer id="footer">
+        <div class="container footer-content">
+            <span>&copy; 2026 Daniel Wohlfahrt</span>
+            <span class="footer-sep">·</span>
+            <span>Game Developer</span>
+            <span class="footer-sep">·</span>
+            <span>Built with HTML · CSS · JS</span>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════
+         SCRIPTS (CDN — kein npm nötig)
+    ═══════════════════════════════════════════ -->
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Splitting.js (Buchstaben-Animation) -->
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    <!-- tsParticles slim -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+    <!-- GLightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+    <!-- Eigenes JS -->
+    <script src="main.js"></script>
+</body>
+</html>
