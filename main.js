@@ -327,7 +327,7 @@ function initAnimations() {
     /* ── Contact ── */
     gsap.fromTo('.contact-email, .social-link',
         { y: 30, opacity: 0 },
-        { scrollTrigger: { trigger: '#contact', start: 'top 40%', once: true },
+        { scrollTrigger: { trigger: '#contact', start: 'top 85%', once: true },
           y: 0, opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.12 }
     );
 
