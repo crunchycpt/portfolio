@@ -14,14 +14,14 @@ const PROJECTS = [
     // ── Unity-Übungen (Grundlagen) ───────────────────────────────
     {
         id:          'game-1',
-        title:       'Mein Unity Spiel',
+        title:       'Whatever Floats Your Balloon',
         engine:      'unity',
         category:    'grundlagen',
         type:        'webgl',
         description: 'Beschreibung einfügen',
-        thumbnail:   'assets/images/thumbnails/game-1.jpg',
+        thumbnail:   'assets/images/thumbnails/game-1.png',
         tags:        ['Action', '3D', '2024'],
-        src:         'games/game-1/index.html',
+        src:         '/games/game-1/index.html',
     },
     {
         id:          'game-2',
@@ -32,7 +32,7 @@ const PROJECTS = [
         description: 'Beschreibung einfügen',
         thumbnail:   'assets/images/thumbnails/game-2.jpg',
         tags:        ['Puzzle', 'Platformer', '2023'],
-        src:         'games/game-2/index.html',
+        src:         '/games/game-2/index.html',
     },
     // ── Hochschulprojekte ────────────────────────────────────────
     {
@@ -72,7 +72,7 @@ const PROJECTS = [
         description: 'Ein Golfspiel-Prototyp mit regelbasiertem Gameplay, Echtzeit-3D-Rendering und eigenem Event-System. Entwickelt in Unity mit C# — Fokus auf saubere Architektur und erweiterbare Systeme.',
         thumbnail:   'assets/images/thumbnails/prototype.jpg',
         tags:        ['Unity', 'C#', 'Prototyp', '2025'],
-        src:         'games/prototype/index.html',
+        src:         '/games/prototype/index.html',
     },
     // ── Blender / 3D-Projekte ────────────────────────────────────
     {
@@ -515,6 +515,11 @@ function openProject(project) {
         return;
     }
 
+    if (project.type === 'webgl') {
+        openWebGLModal(project);
+        return;
+    }
+
     if (project.type === 'image') {
         const lightbox = GLightbox({
             elements: [{ href: project.src, type: 'image', title: project.title }],
@@ -543,7 +548,7 @@ function openProject(project) {
         loop: false,
         autoplayVideos: true,
         width:  '90vw',
-        height: 'auto',
+        height: project.type === 'webgl' ? '85vh' : 'auto',
     });
 
     lightbox.open();
@@ -557,6 +562,36 @@ function openProject(project) {
             }, 500);
         });
     }
+}
+
+/* WebGL Modal */
+function openWebGLModal(project) {
+    const modal = document.createElement('div');
+    modal.className = 'webgl-modal';
+    modal.innerHTML = `
+        <div class="webgl-modal-inner">
+            <button class="webgl-modal-close" aria-label="Schließen">✕</button>
+            <p class="webgl-modal-title">${project.title}</p>
+            <iframe
+                class="webgl-modal-iframe"
+                src="${project.src}"
+                allowfullscreen
+                allow="fullscreen"
+                scrolling="no"
+            ></iframe>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    requestAnimationFrame(() => modal.classList.add('open'));
+
+    const close = () => { modal.classList.remove('open'); setTimeout(() => modal.remove(), 300); };
+    modal.querySelector('.webgl-modal-close').onclick = close;
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', function onKey(e) {
+        if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
+    });
+
+    setTimeout(() => modal.querySelector('iframe')?.contentWindow?.focus(), 600);
 }
 
 /* iOS-Warnung */
